@@ -24,7 +24,7 @@
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
-  return ('Number of donuts: many','Number of donuts: ' + str(count))[count < 9]
+  return ('Number of donuts: many', 'Number of donuts: ' + str(count))[count < 10]
 
 
 # B. both_ends
