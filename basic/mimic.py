@@ -47,17 +47,17 @@ import sys
 
 def mimic_dict(filename):
   """Returns mimic dict mapping each word to list of words which follow it."""
-  map = {}
   agent = ''
+  mapping = {}
   with open(filename, 'r') as file:
     words = file.read().split()
   for word in words:
-    if agent not in map:
-      map[agent] = [word]
+    if agent not in mapping:
+      mapping[agent] = [word]
     else:
-      map[agent].append(word)
+      mapping[agent].append(word)
     agent = word
-  return map
+  return mapping
 
 
 def print_mimic(mimic_dict, word):

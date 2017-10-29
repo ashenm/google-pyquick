@@ -40,21 +40,21 @@ print_words() and print_top().
 import sys
 
 def wordcount(filename):
-  map = {}
+  mapping = {}
   with open(filename, 'r') as file:
     words = file.read().lower().split()
   for word in words:
-    if word not in map:
-      map[word] = 1
+    if word not in mapping:
+      mapping[word] = 1
     else:
-      map[word] += 1
-  return map
+      mapping[word] += 1
+  return mapping
 
 def print_words(filename):
-  map = wordcount(filename)
-  words = sorted(map.keys())
+  mapping = wordcount(filename)
+  words = sorted(mapping.keys())
   for word in words:
-    print word, map[word]
+    print word, mapping[word]
   return
 
 # Define print_words(filename) and print_top(filename) functions.
@@ -66,8 +66,8 @@ def count(pair):
   return pair[1]
 
 def print_top(filename):
-  map = wordcount(filename)
-  pairs = sorted(map.items(), key=count, reverse=True)
+  mapping = wordcount(filename)
+  pairs = sorted(mapping.items(), key=count, reverse=True)
   for pair in pairs[:20]:
     print pair[0], pair[1]
 
