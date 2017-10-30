@@ -52,11 +52,11 @@ def download_images(img_urls, dest_dir):
     os.makedirs(dest_dir)
 
   with open(os.path.join(dest_dir, 'index.html'), 'w') as index:
-    index.write('<html><head><title>Logpuzzle</title></head><body>')
+    index.write('<!DOCTYPE html><html><head><title>Logpuzzle</title></head><body>')
     for i in range(len(img_urls)):
       path = 'img{}'.format(i)
       print 'Retrieving...', img_urls[i]
-      index.write('<img src="{}"></img>'.format(path))
+      index.write('<img src="{}" alt="image stripe {}" />'.format(path, i + 1))
       urllib.urlretrieve(img_urls[i], os.path.join(dest_dir, path))
     index.write('</body></html>')
   
